@@ -14,10 +14,13 @@ import numpy.matlib
 
 plot_value = True
 # Here we are defining two matrices a and b of size LxM and MxN for test purposes
-L = 40
-M = 60
-N = 100
+L = 500
+M = 500
+N = 500
 max_range = 10
+
+# block_size is the number of items per workgroup
+block_size = 10
 
 # Function for plotting the graphs for each of the four algorithms
 def plotMaker(MAKE_PLOT) :
@@ -348,7 +351,7 @@ cl.enqueue_copy(queue, c3, c3_buf)
 
 # Build kernel for matrix multiplication method 4
 prg = cl.Program(ctx, kernel_4).build()
-prg.matmul4(queue, (L, ), (1, ), a_buf, b_buf, c4_buf, np.int32(L), np.int32(M), np.int32(N))
+prg.matmul4(queue, (L, ), (L/block_size, ), a_buf, b_buf, c4_buf, np.int32(L), np.int32(M), np.int32(N))
 
 # Retrieve the results from the GPU for matmul3:
 cl.enqueue_copy(queue, c4, c4_buf)
@@ -416,7 +419,7 @@ prg = cl.Program(ctx, kernel_4).build()
 times = []
 for i in xrange(M):
 	start = time.time()
-	prg.matmul4(queue, (L, ), (1,), a_buf, b_buf, c4_buf, np.int32(L), np.int32(M), np.int32(N))
+	prg.matmul4(queue, (L, ), (L/block_size,), a_buf, b_buf, c4_buf, np.int32(L), np.int32(M), np.int32(N))
 	times.append(time.time()-start)
 times4 = np.average(times)
 print 'OpenCL Algorithm-4 time:  ', times4
