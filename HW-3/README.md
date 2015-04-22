@@ -1,7 +1,7 @@
 ###################################################################################
 
 Matrix Multiplication with Complex Numbers using PyOpenCL.
-By Avinash Sridhar (as4626@columbia.edu)
+By Avinash Sridhar (avinash.sridhar1989@gmail.com)
 
 ###################################################################################
 
@@ -10,7 +10,6 @@ READ ME FILE FOR complex_matmul.py
 ###################################################################################
 
 Execute the code on GPU using normal procedure.
-
 
 If you have multiple jobs running on GPU, use slurm scheduler as follows:
 

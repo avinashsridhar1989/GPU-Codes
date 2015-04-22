@@ -2,7 +2,7 @@
 Histogram Calculation for N=R*C bytes image where R and C are byte dimensions.
 Pixels are 8 bit values from 0 - 255
 
-By Avinash Sridhar (as4626@columbia.edu)
+By Avinash Sridhar (avinash.sridhar1989@gmail.com)
 ################################################################################################
 READ ME FILE FOR algo-histogram.py
 ###################################################################################
