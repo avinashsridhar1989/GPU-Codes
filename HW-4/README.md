@@ -2,7 +2,7 @@
 Histogram Calculation for N=R*C bytes image where R and C are byte dimensions.
 Pixels are 8 bit values from 0 - 255
 
-By Avinash Sridhar (as4626@columbia.edu
+By Avinash Sridhar (as4626@columbia.edu)
 ################################################################################################
 READ ME FILE FOR algo-histogram.py
 ###################################################################################
@@ -12,8 +12,7 @@ GPU: TESLA K-40 C
 Execute the code on GPU using normal procedure.
 
 ###################################################################################
-BRIEF EXPLANATION ON ALGORITHM USED
-###################################################################################
+BRIEF EXPLANATION ON ALGORITHM USED###################################################################################
 
 Basic Algorithm: This is the algorithm provided by the TA. This shows a basic approach of histogram calculation on the GPU.
 
